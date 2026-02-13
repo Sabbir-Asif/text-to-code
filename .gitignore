@@ -1,0 +1,92 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# Data and Checkpoints
+checkpoints/
+data/
+datasets/
+*.pt
+*.pth
+model_weights/
+saved_models/
+
+# Logs
+*.log
+logs/
+wandb/
+
+# Environment
+.env
+.env.local
+*.env
+
+# OS
+.DS_Store
+__MACOSX/
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+
+# Other
+.cache/
+.hypothesis/
+*.lock
