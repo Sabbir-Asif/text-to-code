@@ -39,7 +39,6 @@ Thumbs.db
 
 # Jupyter Notebook
 .ipynb_checkpoints/
-*.ipynb
 
 # Data and Checkpoints
 checkpoints/
