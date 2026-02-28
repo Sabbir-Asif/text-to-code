@@ -1,0 +1,40 @@
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node modules
+node_modules/
+
+# Large files
+*.tar.gz
+*.zip
+*.rar
+
+# Jupyter
+.ipynb_checkpoints/
+.jupyter/
+
+# OS
+Thumbs.db
+.env
+.env.local

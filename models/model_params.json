@@ -1,0 +1,5 @@
+{
+  "vanilla_rnn": 4239752,
+  "lstm": 7527304,
+  "lstm_attention": 7526024
+}

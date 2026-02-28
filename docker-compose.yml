@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  seq2seq-notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seq2seq-training-analytics
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+      - /workspace/.venv  # Prevent local venv from being mounted
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - CUDA_VISIBLE_DEVICES=0  # Adjust GPU device as needed
+    working_dir: /workspace
+    command: >
+      bash -c "
+      echo 'Seq2Seq Training & Analytics Environment'
+      echo '=========================================='
+      echo ''
+      echo 'Available Notebooks:'
+      echo '  - rnn-seq2seq.ipynb (Training)'
+      echo '  - rnn-seq2seq-analytics.ipynb (Analytics & Evaluation)'
+      echo ''
+      echo 'Starting Jupyter Lab on http://localhost:8888'
+      echo ''
+      jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+      "
+    stdin_open: true
+    tty: true
+
+  seq2seq-bash:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seq2seq-shell
+    volumes:
+      - .:/workspace
+      - /workspace/.venv
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    working_dir: /workspace
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    profiles:
+      - shell  # Use: docker-compose --profile shell up seq2seq-bash
