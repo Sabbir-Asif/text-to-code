@@ -21,16 +21,30 @@ The goals of this project are to study the limitations of simple RNN models, eva
 - Maximum output length: 80 tokens
 
 ## Training Configuration
-- Embedding size: 256
-- Hidden size: 256
-- Number of layers: 2
-- Dropout: 0.3
-- Batch size: 32 to 64
-- Optimizer: Adam or AdamW
-- Loss function: Cross entropy
-- Teacher forcing ratio: initial 0.7 with decay
-- Epochs: 10 to 20
-
+```
+{
+  "TRAIN_SIZE": 10000,
+  "VAL_SIZE": 1500,
+  "TEST_SIZE": 1500,
+  "MAX_DOCSTRING_LEN": 50,
+  "MAX_CODE_LEN": 80,
+  "EMBEDDING_DIM": 256,
+  "HIDDEN_DIM": 256,
+  "NUM_LAYERS": 2,
+  "DROPOUT": 0.3,
+  "BIDIRECTIONAL": true,
+  "BATCH_SIZE": 64,
+  "EPOCHS": 20,
+  "LEARNING_RATE": 0.001,
+  "TEACHER_FORCING_RATIO": 0.5,
+  "VOCAB_SIZE": 5000,
+  "GRADIENT_CLIP": 1.0,
+  "WARMUP_STEPS": 1000,
+  "EARLY_STOPPING_PATIENCE": 3,
+  "BEAM_SIZE": 3,
+  "SCHEDULED_SAMPLING": true
+}
+```
 ## Models Implemented
 
 ### Model 1: Vanilla RNN Seq2Seq
@@ -51,7 +65,7 @@ The encoder uses an LSTM, optionally bidirectional, and the decoder uses an LSTM
 - LSTM with attention beam search: 2.288397
 
 ### Best Performing Model
-The best result is obtained using the LSTM with attention model with beam search decoding, achieving a BLEU score of 0.0131.
+The best result is obtained using the LSTM with attention model with beam search decoding, achieving a BLEU score of 2.288397
 
 ### Qualitative Observations
 - Vanilla RNN outputs are mostly noisy and contain repeated or malformed tokens.
