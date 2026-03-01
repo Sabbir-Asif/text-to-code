@@ -45,10 +45,10 @@ The encoder uses an LSTM, optionally bidirectional, and the decoder uses an LSTM
 ## Results
 
 ### BLEU Score Comparison
-- Vanilla RNN Seq2Seq: 0.0202
-- LSTM Seq2Seq: 0.0098
-- LSTM with attention greedy decoding: 0.0107
-- LSTM with attention beam search: 0.0131
+- Vanilla RNN Seq2Seq: 0.252
+- LSTM Seq2Seq: 0.001847
+- LSTM with attention greedy decoding: 2.194625
+- LSTM with attention beam search: 2.288397
 
 ### Best Performing Model
 The best result is obtained using the LSTM with attention model with beam search decoding, achieving a BLEU score of 0.0131.
